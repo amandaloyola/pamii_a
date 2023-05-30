@@ -1,35 +1,67 @@
-import React, {useState} from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native'; 
 
-import styles from './styles'
+import styles from './styles';
 
-export default function apostila03() {
+export default function Index() {
 
-  const [contador, setContador] = useState(0);
+  const [numero, setNumero] = useState(0);
 
-function addNumber() {
-  setContador(contador+1);
-}
-  function subNumber() {
-    setContador(contador-1);
-  }
-  function addNumber() {
-    setContador(contador+1);
-    
-  return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>Exemplo apostila 3</Text>
+    function addNumber(){
+    setNumero(numero + 1);
+    } 
 
-      <Text style={styles.textCounter}>{contador}</Text>
+    function subNumber(){
+    setNumero(numero - 1);
+    }
 
-      <TouchableOpacity
-       style={styles.button}
-       onPress={()=>addNumber()}
-       >
-      <Text style= {styles.textButton} >Somar +1</Text>
-      </TouchableOpacity>
+    function zerar(){
+    setNumero(0);
+    }
 
-    </View>
+ return(
+  <View style={styles.container}>
+    <Text style={styles.paragraph}>
+     Exemplo 3
+  </Text>            
+
+        <View style={styles.programa}>
+
+            <View style={styles.horizontal}>
+
+                <TouchableOpacity 
+                    style={[styles.button, styles.buttonMaisMenos]} 
+                    onPress={() => subNumber()}
+                >
+                    <Text style={styles.textButton}>
+                        -
+                    </Text>
+                </TouchableOpacity>
+
+                <Text style={styles.textCounter}>{numero}</Text>
+
+                <TouchableOpacity 
+                    style={[styles.button, styles.buttonMaisMenos]} 
+                    onPress={() => addNumber()}
+                >
+                    <Text style={styles.textButton}>
+                        +
+                    </Text>
+                </TouchableOpacity>
+
+            </View>
+
+            <TouchableOpacity 
+            style={[styles.button, {borderRadius: 30}]} 
+            onPress={() => zerar()}
+            >
+                <Text style={styles.textButton}>
+     Zerar
+     </Text>
+    </TouchableOpacity>        
+
+</View>                
+
+</View>
   );
 }
-

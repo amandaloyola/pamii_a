@@ -1,13 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import Constants from 'expo-constants'; 
 
-import Apostila03 from './components/apostila_3/Index'
-
+let corAPP = '#000'
+// import Apostila03 from './components/apostila_003';
+// import Apostila03A from './components/apostila_apo03avancado';
+import Apostila04 from './components/apostila_4';
+let corApp = '#000';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Apostila03/>
-      <StatusBar style="auto" />
+      <Apostila04 />
+      <StatusBar style={corAPP === '#000' ? "light" : "dark"} />
     </View>
   );
 }
@@ -15,7 +19,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
+    backgroundColor: corAPP,
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    padding: 8,
+    paddingTop: Constants.statusBarHeight,
   },
+
 });
