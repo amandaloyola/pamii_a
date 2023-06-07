@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
-function Apostila04() {
+function Apostila_004_ativ() {
   const [entrada, setEntrada] = useState('');
   const [mensagem, setMensagem] = useState('Aqui aparece o texto digitador');
 
@@ -33,4 +33,4 @@ function Apostila04() {
     </View>
   );
 }
-export default Apostila04;
+export default Apostila_004_ativ;
